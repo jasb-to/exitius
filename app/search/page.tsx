@@ -1,64 +1,40 @@
 import CompanyCard from "@/components/CompanyCard";
-import {companies} from "@/data/companies";
+import { companies } from "@/data/companies";
 
 
-export default function SearchPage(){
+export default function SearchPage() {
+
+  return (
+    <main className="max-w-6xl mx-auto px-6 py-10">
+
+      <h1 className="text-4xl font-bold">
+        Find Acquisition Opportunities
+      </h1>
 
 
-return (
-
-<main className="
-max-w-6xl
-mx-auto
-px-6
-py-10
-">
+      <p className="mt-3 text-gray-600">
+        Discover established businesses before they reach the market.
+      </p>
 
 
-<h1 className="
-text-4xl
-font-bold
-">
+      <div className="
+        mt-10
+        grid
+        md:grid-cols-3
+        gap-6
+      ">
 
-Find Acquisition Opportunities
+        {companies.map((company) => (
 
-</h1>
+          <CompanyCard
+            key={company.id}
+            company={company}
+          />
 
+        ))}
 
-<p className="
-mt-3
-text-gray-600
-">
+      </div>
 
-Discover established businesses before they reach the market.
-
-</p>
-
-
-
-<div className="
-mt-10
-grid
-md:grid-cols-3
-gap-6
-">
-
-
-{companies.map(company=>(
-
-<CompanyCard
-key={company.id}
-company={company}
-/>
-
-))}
-
-
-</div>
-
-
-</main>
-
-)
-
+    </main>
+  );
 }
