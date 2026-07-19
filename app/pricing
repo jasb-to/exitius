@@ -1,0 +1,161 @@
+export default function PricingPage() {
+
+  const plans = [
+    {
+      name: "Free",
+      price: "£0",
+      description: "Explore acquisition opportunities.",
+      features: [
+        "Browse companies",
+        "View basic profiles",
+        "Limited searches"
+      ],
+      button: "Start Free"
+    },
+    {
+      name: "Professional",
+      price: "£99/month",
+      description: "For acquisition entrepreneurs.",
+      features: [
+        "Unlimited company searches",
+        "Save acquisition targets",
+        "Full company profiles",
+        "Retirement scoring"
+      ],
+      button: "Start Professional"
+    },
+    {
+      name: "Investor",
+      price: "£299/month",
+      description: "For serious buyers and funds.",
+      features: [
+        "Everything in Professional",
+        "AI acquisition reports",
+        "Priority opportunities",
+        "Export reports"
+      ],
+      button: "Contact Sales"
+    }
+  ];
+
+
+  return (
+
+    <main className="
+      max-w-6xl
+      mx-auto
+      px-6
+      py-12
+    ">
+
+      <div className="
+        text-center
+      ">
+
+        <h1 className="
+          text-4xl
+          font-bold
+        ">
+          Find businesses worth buying
+        </h1>
+
+
+        <p className="
+          mt-4
+          text-gray-600
+        ">
+          Discover established companies before they reach the market.
+        </p>
+
+      </div>
+
+
+      <div className="
+        mt-12
+        grid
+        md:grid-cols-3
+        gap-8
+      ">
+
+
+        {plans.map((plan) => (
+
+          <div
+            key={plan.name}
+            className="
+              rounded-2xl
+              border
+              p-8
+            "
+          >
+
+            <h2 className="
+              text-2xl
+              font-bold
+            ">
+              {plan.name}
+            </h2>
+
+
+            <p className="
+              mt-4
+              text-3xl
+              font-bold
+            ">
+              {plan.price}
+            </p>
+
+
+            <p className="
+              mt-3
+              text-gray-600
+            ">
+              {plan.description}
+            </p>
+
+
+            <ul className="
+              mt-6
+              space-y-3
+              text-sm
+            ">
+
+              {plan.features.map(feature => (
+
+                <li key={feature}>
+                  ✓ {feature}
+                </li>
+
+              ))}
+
+            </ul>
+
+
+            <button
+              className="
+                mt-8
+                w-full
+                rounded-lg
+                bg-black
+                px-5
+                py-3
+                text-white
+              "
+            >
+              {plan.button}
+            </button>
+
+
+          </div>
+
+        ))}
+
+
+      </div>
+
+
+    </main>
+
+  );
+
+}
